@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h2>Recommended Hotels</h2>
+<div class="hotel-list">
+    <% hotels.forEach(hotel => { %>
+        <div class="hotel-card">
+            <img src="<%= hotel.imageUrl %>" alt="<%= hotel.name %>">
+            <h3><%= hotel.name %></h3>
+            <p><%= hotel.description %></p>
+            <p>Rating: <%= hotel.rating %> ⭐</p>
+            <a href="/hotels/<%= hotel.id %>">View Details</a>
+        </div>
+    <% }) %>
+</div>
+
+<%- include('partials/footer') %>

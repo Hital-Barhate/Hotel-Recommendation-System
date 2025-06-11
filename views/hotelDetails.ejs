@@ -1,0 +1,13 @@
+<%- include('partials/header') %>
+
+<div class="hotel-details">
+    <h2><%= hotel.name %></h2>
+    <img src="<%= hotel.imageUrl %>" alt="<%= hotel.name %>">
+    <p><%= hotel.description %></p>
+    <p>Location: <%= hotel.location %></p>
+    <p>Rating: <%= hotel.rating %> ⭐</p>
+    <p>Price: ₹<%= hotel.price %>/night</p>
+    <button>Book Now</button>
+</div>
+
+<%- include('partials/footer') %>
