@@ -1,8 +1,10 @@
 let express=require("express");
 let app=require("./src/app.js");
+let mysql=require("./src/config/db.js");
 require("dotenv").config();
 
 const PORT=process.env.PORT || 3000;
+
 
 
 app.listen(PORT,()=>{
