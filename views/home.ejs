@@ -4,181 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HotelBooking - Find Your Perfect Stay</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="nav-brand">
-                <h1><i class="fas fa-hotel"></i> HotelBooking</h1>
-            </div>
-            <nav class="nav-menu">
-                
-            </nav>
+        <div class="container header-container">
+            <h1 class="brand"><i class="fas fa-hotel"></i> HotelBooking</h1>
             <div class="auth-buttons">
-                <button class="btn-secondary" id="loginBtn">Sign In</button>
-                
+                <a href="/login" class="btn-secondary">Sign In</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="hero-overlay">
             <div class="hero-content">
                 <h2>Find Your Perfect Stay</h2>
-                <p>Compare prices from hundreds of travel sites and save up to 30%</p>
-                
+                <p>Compare prices from hundreds of hotel sites and save up to 30%</p>
                 <div class="search-container">
                     <div class="search-box">
-                        <div class="search-field">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <input type="text" placeholder="Where are you going?" id="locationInput">
-                        </div>
-                        <button class="search-btn" id="searchBtn">
-                            <i class="fas fa-search"></i>
-                            Search
-                        </button>
+                        <input type="text" class="search-input" placeholder="Where are you going?">
+                        <button class="search-btn"><i class="fas fa-search"></i> Search</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Recently Viewed -->
-    <section class="recently-viewed">
-        <div class="container">
-            <h3>Recently Viewed</h3>
-            <div class="recently-viewed-grid" id="recentlyViewedGrid">
-                <!-- Recently viewed items will be populated by JavaScript -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Hot Hotel Deals -->
-    <section class="hot-deals">
-        <div class="container">
-            <div class="section-header">
-                <h3>Hot Hotel Deals</h3>
-                <div class="slider-controls">
-                    <button class="slider-btn prev" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="slider-btn next" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="deals-slider">
-                <div class="deals-container" id="dealsContainer">
-                    <!-- Hotel deals will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
+    
     <!-- Popular Searches -->
-    <section class="popular-searches">
+    <section class="section">
         <div class="container">
             <h3>Popular Searches</h3>
-            <div class="popular-grid" id="popularGrid">
-                <!-- Popular searches will be populated by JavaScript -->
-            </div>
+            <div class="grid" id="popularGrid"></div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Safety</a></li>
-                        <li><a href="#">Terms</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>International Sites</h4>
-                    <div class="international-sites">
-                        <a href="#" class="site-link">🇺🇸 United States</a>
-                        <a href="#" class="site-link">🇬🇧 United Kingdom</a>
-                        <a href="#" class="site-link">🇩🇪 Germany</a>
-                        <a href="#" class="site-link">🇫🇷 France</a>
-                        <a href="#" class="site-link">🇪🇸 Spain</a>
-                        <a href="#" class="site-link">🇮🇹 Italy</a>
-                        <a href="#" class="site-link">🇯🇵 Japan</a>
-                        <a href="#" class="site-link">🇦🇺 Australia</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
+        <div class="container footer-container">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Safety</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>International Sites</h4>
+                <div class="international-sites">
+                    <a href="#">🇺🇸 USA</a>
+                    <a href="#">🇬🇧 UK</a>
+                    <a href="#">🇩🇪 Germany</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 TravelBooking. All rights reserved.</p>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HotelBooking. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Login Modal -->
-    <div class="modal" id="loginModal">
-        <div class="modal-content">
-            <span class="close" id="closeLogin">&times;</span>
-            <h3>Sign In</h3>
-            <form id="loginForm">
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="btn-primary full-width">Sign In</button>
-            </form>
-            <p class="modal-footer">Don't have an account? <a href="#" id="switchToSignup">Sign up</a></p>
-        </div>
-    </div>
-
-    <!-- Signup Modal -->
-    <div class="modal" id="signupModal">
-        <div class="modal-content">
-            <span class="close" id="closeSignup">&times;</span>
-            <h3>Sign Up</h3>
-            <form id="signupForm">
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="btn-primary full-width">Sign Up</button>
-            </form>
-            <p class="modal-footer">Already have an account? <a href="#" id="switchToLogin">Sign in</a></p>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

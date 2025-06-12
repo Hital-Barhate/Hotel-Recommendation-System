@@ -3,6 +3,8 @@ let router = express.Router();
 let controller = require('../Controller/regCtrl.js');
 
 router.get('/', controller.regCtrl);                // handles GET /reg
-router.post('/saveReg', controller.saveReg);         // handles POST /reg/saveReg
+router.post("/saveReg", controller.saveReg);
+
+
 
 module.exports = router;
