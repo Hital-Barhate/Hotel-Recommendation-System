@@ -44,24 +44,20 @@ exports.validate = (req, res) => {
   });
 };
 
-exports.addHotel = (req, res) => {
-  const { hotel_id, hotel_name, hotel_address, city_id, area_id, hotel_email, hotel_contact } = req.body;
-  regmodel.addHotel({ hotel_id, hotel_name, hotel_address, city_id, area_id, hotel_email, hotel_contact }, (err) => {
-    if (err) return res.send("DB Error: " + err);
-    res.redirect("/admindash");  // match your route
-  });
+// ✅ in your regCtrl.js
+const cityModel = require("../models/regmodel");
+
+exports.renderAddCity = (req, res) => {
+  res.render("city"); // your addCity.ejs file
 };
 
-exports.getHotels = (req, res) => {
-  regmodel.getHotels((err, rows) => {
-    if (err) return res.json([]);
-    res.json(rows);
-  });
-};
-
-exports.deleteHotel = (req, res) => {
-  regmodel.deleteHotel(req.params.id, (err) => {
-    if (err) return res.json({ message: "Error" });
-    res.json({ message: "Deleted" });
+exports.saveCity = (req, res) => {
+  const { city_id, city_name, pincode } = req.body;
+  cityModel.insertCity(city_id, city_name, pincode, (err, result) => {
+    if (err) {
+      console.log(err);
+      return res.send("Error saving city");
+    }
+    res.redirect("/admin/addCity");
   });
 };

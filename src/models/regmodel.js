@@ -17,23 +17,8 @@ exports.whologin = (email, password, type, callback) => {
   });
 };
 
-exports.addHotel = (data, callback) => {
-  const sql = "INSERT INTO hotelmaster VALUES (?, ?, ?, ?, ?, ?, ?)";
-  conn.query(sql, [
-    data.hotel_id,
-    data.hotel_name,
-    data.hotel_address,
-    data.city_id,
-    data.area_id,
-    data.hotel_email,
-    data.hotel_contact
-  ], callback);
-};
 
-exports.getHotels = (callback) => {
-  conn.query("SELECT hotel_id, hotel_name FROM hotelmaster", callback);
-};
-
-exports.deleteHotel = (id, callback) => {
-  conn.query("DELETE FROM hotelmaster WHERE hotel_id = ?", [id], callback);
+exports.insertCity = (city_id, city_name, pincode, callback) => {
+  const sql = "INSERT INTO citymaster (city_id, city_name, pincode) VALUES (?, ?, ?)";
+  conn.query(sql, [city_id, city_name, pincode], callback);
 };
