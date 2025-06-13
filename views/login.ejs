@@ -1,29 +1,32 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Login Form</title>
-<link rel="stylesheet" href="/style.css">
-
+  <title>Login</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<div class="h">
-<center><br>
-<h1>Login Form</h1>
-</center>
-<div class="f">
-<label>Email or Phone</label>
-<input type="text" name="email" placeholder="Enter email or phone" required /><br><br>
 
-<label>Password</label>
-<input type="password" name="password" placeholder="Enter password" required />
-<br><br>
-</div>
-<center>
-<button>Login</button>
-<p>Not a member? <a href="/register">SignUp Now</a></p>
+  <div class="center-wrapper">
+    <form class="login-box" method="POST" action="/reg/login">
+      <h1>Login Form</h1>
 
+      <label>Email or Phone</label>
+      <input type="text" name="email" placeholder="Enter email or phone" required />
 
-</center>
-</div>
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password" required />
+
+      <label>Select Role</label>
+      <select name="type">
+    <option value="admin">Admin</option>
+    <option value="user">User</option>
+  </select>
+
+      <button type="submit">Login</button>
+
+      <p>Not a member? <a href="/register">Sign Up Now</a></p>
+    </form>
+  </div>
 
 </body>
 </html>

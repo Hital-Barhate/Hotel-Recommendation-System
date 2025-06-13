@@ -1,37 +1,33 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
 const path = require("path");
+
+const regRoutes = require("./routes/regroutes");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cookieParser());
-
-// ✅ Serve static files from "public" directory
-app.use(express.static(path.join(__dirname, "..", "public")));
-
-// ✅ Set EJS as view engine
+// View engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "..", "views"));
 
-// ✅ Routes
-app.use("/reg", require("./routes/regroutes"));
+// Static files
+app.use(express.static(path.join(__dirname, "..", "public")));
 
-app.get("/", (req, res) => {
-  res.render("home");
-});
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(
+  session({
+    secret: "secretkey",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
-app.get('/login', (req, res) => {
-  res.render('login'); // make sure login.ejs exists inside views/
-});
-
-
-
-app.get('/register', (req, res) => {
-    res.render('register.ejs'); // Make sure register.ejs exists inside your views folder
-});
-
+// ✅ Mount single router
+app.use("/", regRoutes);
 
 module.exports = app;
