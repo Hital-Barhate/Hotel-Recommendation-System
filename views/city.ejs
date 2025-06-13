@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add City</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ✅ Header same as admindash -->
+  <header class="header">
+    <div class="container header-container">
+      <h1 class="brand"><i class="fas fa-hotel"></i> Happy-Stays - Admin Panel</h1>
+      <div class="auth-buttons">
+        <a href="/logout" class="btn-secondary">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-wrapper">
+    <!-- ✅ Sidebar same as admindash -->
+    <aside class="sidebar">
+      <ul class="sidebar-menu">
+        <li class="has-submenu">
+          <a href="#"><i class="fas fa-city"></i> City <i class="fas fa-caret-down"></i></a>
+          <ul class="submenu">
+            <li><a href="/admin/addCity">Add City</a></li>
+          </ul>
+        </li>
+        <!-- other menu items -->
+      </ul>
+    </aside>
+
+    <main class="dashboard-content">
+      <h2>Add City</h2>
+      <form action="/admin/saveCity" method="POST" class="city-form">
+        <input type="number" name="city_id" placeholder="City ID" required>
+        <input type="text" name="city_name" placeholder="City Name" required>
+        <input type="text" name="pincode" placeholder="Pincode" required>
+        <button type="submit">Add City</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- ✅ Footer same as admindash -->
+  <footer class="footer">
+    <!-- reuse your existing footer HTML here -->
+  </footer>
+
+</body>
+</html>

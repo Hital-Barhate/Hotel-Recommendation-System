@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <!-- ✅ SAME HEADER AS home.ejs -->
+  <!-- ✅ HEADER -->
   <header class="header">
     <div class="container header-container">
-      <h1 class="brand"><i class="fas fa-hotel"></i>Happy-Stays - Admin Panel</h1>
+      <h1 class="brand"><i class="fas fa-hotel"></i> Roomy Residence - Admin Panel</h1>
       <div class="auth-buttons">
         <a href="/logout" class="btn-secondary">Logout</a>
       </div>
@@ -27,13 +27,30 @@
       <ul class="sidebar-menu">
         <li><a href="#"><i class="fas fa-hotel"></i> Hotels</a></li>
         <li><a href="#"><i class="fas fa-calendar-check"></i> Bookings</a></li>
-        <li><a href="#"><i class="fas fa-city"></i> City</a></li>
+
+    
+
+
+
+        <!-- ✅ City with dropdown -->
+        <li class="has-submenu">
+          <a href="#"><i class="fas fa-city"></i> City <i class="fas fa-caret-down"></i></a>
+          <ul class="submenu">
+            <li><a href="/admin/addCity">Add City</a></li>
+          </ul>
+        </li>
+
         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Area</a></li>
         <li><a href="#"><i class="fas fa-star"></i> Reviews</a></li>
         <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
         <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
       </ul>
+
+
+
+      
     </aside>
+
 
     <main class="dashboard-content">
       <div class="stats-container">
@@ -97,8 +114,8 @@
     </main>
   </div>
 
-  <!-- ✅ SAME FOOTER AS home.ejs -->
-   <br><br>
+  <!-- ✅ FOOTER -->
+  <br><br>
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-section">
@@ -142,10 +159,12 @@
   </footer>
 
   <script>
-    // Toggle sidebar on click
+    // Sidebar toggle
     document.querySelector(".sidebar-toggle").onclick = () => {
       document.querySelector(".sidebar").classList.toggle("collapsed");
     };
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
